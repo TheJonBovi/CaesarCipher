@@ -39,6 +39,7 @@ int main()
 		if (isalpha(c)) c = tolower(c);
 		plaintext[currentChar] = c;
 	}
+	//Some Test comment
 	cout << plaintext;
 
 	return 0;
