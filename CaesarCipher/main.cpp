@@ -9,30 +9,7 @@ using namespace std;
 
 
 int main()
-{
-	/* This whole thing is me verifying drew understands how algorithm works
-	char testplaintext[] = "Hello World";
-	char testciphertext[sizeof(testplaintext)];
-	int testkey = 0;
-
-	cout << "Please provide a key: ";
-	cin >> testkey;
-
-	cout << testplaintext << endl;
-
-	Caesar_En(testplaintext, testciphertext, testkey); //Test Encode
-
-	cout << testciphertext << endl;
-the
-	Caesar_De(testciphertext, testplaintext, testkey); //Test Decode
-
-	cout << testplaintext << endl;
-	*/
-
-	//Function to open plaintext file
-	// Not sure how to pull strings out of file, working on it
-
-	string filename;
+{	string filename;
 	string plaintext = "";
 	ifstream* fin = nullptr;
 	try
