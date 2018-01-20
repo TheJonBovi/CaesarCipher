@@ -1,0 +1,25 @@
+SPEC:
+
+Input file:  plaintextfile.txt
+Output file: ciphertextfile.txt
+
+(files must be present in .sln root directory)
+
+Input file can be any character. Program will apply Caesar encrpyption to only caracters a-z, leaving all whitespace, spec char, etc. alone.
+
+Output file will be all upper case with maintained whitespace, special characters, etc.
+
+
+
+
+The key will be a integer and must be provided by the user at runtime.
+
+Program will intially prompt user with the option to Encrypt or Decrypt.
+
+Once selected, the use will be prompted for a key.
+
+If Encrypt is selected, the program will encrypt the contents of the input file via Caeser using the provided key and output the results to the output file.
+
+If Decrypt is selected, the program will decrypt the contents of the output file via Caeser using the provided key and output the results to the output file.
+
+
