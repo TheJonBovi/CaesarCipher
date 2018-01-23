@@ -12,7 +12,7 @@ Output file will be all upper case with maintained whitespace, special character
 
 
 
-The key will be a integer and must be provided by the user at runtime.
+The key will be an integer and must be provided by the user at runtime.
 
 Program will intially prompt user with the option to Encrypt or Decrypt.
 
