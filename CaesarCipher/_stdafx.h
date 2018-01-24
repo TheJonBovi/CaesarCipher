@@ -1,7 +1,7 @@
 #pragma once
 
 #ifndef _STDAFX
-#define _STDFAX
+#define _STDAFX
 
 #include <iostream>
 #include <string>
@@ -24,8 +24,5 @@ typedef double db;
 
 inline void Flush() { cin.ignore(cin.rdbuf()->in_avail()); }
 //void Clear_Screen();// Provided verbatum by Geer 2011
-
-//Code Storage
-//cout.precision(0);	cout << std::fixed << setiosflags(ios::left);
 
 #endif
