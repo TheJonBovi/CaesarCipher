@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CaesarCipher", "CaesarCipher\CaesarCipher.vcxproj", "{738E41E3-CB3F-4CF1-9E1F-8E563B5E8868}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Break_Caesar", "Break_Caesar\Break_Caesar.vcxproj", "{11878D67-7B06-4369-B27B-573649C55844}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{738E41E3-CB3F-4CF1-9E1F-8E563B5E8868}.Release|x64.Build.0 = Release|x64
 		{738E41E3-CB3F-4CF1-9E1F-8E563B5E8868}.Release|x86.ActiveCfg = Release|Win32
 		{738E41E3-CB3F-4CF1-9E1F-8E563B5E8868}.Release|x86.Build.0 = Release|Win32
+		{11878D67-7B06-4369-B27B-573649C55844}.Debug|x64.ActiveCfg = Debug|x64
+		{11878D67-7B06-4369-B27B-573649C55844}.Debug|x64.Build.0 = Debug|x64
+		{11878D67-7B06-4369-B27B-573649C55844}.Debug|x86.ActiveCfg = Debug|Win32
+		{11878D67-7B06-4369-B27B-573649C55844}.Debug|x86.Build.0 = Debug|Win32
+		{11878D67-7B06-4369-B27B-573649C55844}.Release|x64.ActiveCfg = Release|x64
+		{11878D67-7B06-4369-B27B-573649C55844}.Release|x64.Build.0 = Release|x64
+		{11878D67-7B06-4369-B27B-573649C55844}.Release|x86.ActiveCfg = Release|Win32
+		{11878D67-7B06-4369-B27B-573649C55844}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

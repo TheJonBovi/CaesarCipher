@@ -16,7 +16,6 @@ const int MAXKEY(N_CHAR + 1);    //(Maximum) length for a text key for vigenere 
 
 #define NUM_ARRAY_ENTRIES(a)  ( sizeof(a)/sizeof(*a) )
 								 //constexpr int NUM_ARRAY_ENTRIES(MenuChoice a)  { return sizeof(a)/sizeof(*a); } //Why won't this work?
-#define CHECK_CHAR(p, c) if ( (p) < MINVAL || (p) > MAXVAL ){ (c) = (p); }              \
 
 void Caesar_En(char plaintext[], char ciphertext[], int key);
 

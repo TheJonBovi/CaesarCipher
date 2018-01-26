@@ -9,20 +9,16 @@ using namespace std;
 
 
 int main()
-{	string filename;
+{	//string filename;
 	string plaintext = "";
 	ifstream* fin = nullptr;
 	try
-	{	cout<< "Enter message or file: ";
-		cin >> filename;
-		fin = new ifstream(filename);
-		if(fin) if (fin->good()) //double if for gaurenteed sequentialization
-		{	char achar;
-			while(fin->get(achar)) plaintext += achar;
-			fin->close();
-		}
-		else { plaintext = filename; }
-	}catch(exception error)
+	{	fin = new ifstream("plaintextfile.txt");
+		char achar;
+		while(fin->get(achar)) plaintext += achar;
+		fin->close();
+	}
+	catch(exception error)
 	{	if(fin != nullptr)	if(fin->good()) fin->close();
 		delete fin;
 		cout<< error.what();

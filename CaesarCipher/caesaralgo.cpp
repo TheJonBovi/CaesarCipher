@@ -11,8 +11,8 @@ void Caesar_En(char plaintext[], char ciphertext[], int key)
 	for (i = 0; plaintext[i] != 0; i++)
 	{
 		pc = plaintext[i] - MINVAL;//        brings the ASCII value of 'a' down to 0.
-		CHECK_CHAR(plaintext[i], ciphertext[i]);
-			ciphertext[i] = unsigned((pc + N_CHAR + key) % N_CHAR + MINVAL);
+		if ( plaintext[i] < MINVAL || plaintext[i] > MAXVAL )	ciphertext[i] = plaintext[i];
+		else ciphertext[i] = unsigned((pc + N_CHAR + key) % N_CHAR + MINVAL);
 	}/* ^ adding N_CHAR then taking the modulos negates the concequences of ( pt < abs(key) ) ^ */
 
 	ciphertext[i] = 0; key = 0;//             Terminating Char, and cleanup.
