@@ -1,7 +1,5 @@
-﻿  stdafx.cpp
-  main.cpp
-  Clear_Screen.cpp
-  caesaralgo.cpp
-  Generating Code...
-  CaesarCipher.vcxproj -> C:\Users\derai\Documents\GitHub\CaesarCipher\Debug\CaesarCipher.exe
-  CaesarCipher.vcxproj -> C:\Users\derai\Documents\GitHub\CaesarCipher\Debug\CaesarCipher.pdb (Partial PDB)
+﻿  main.cpp
+c:\users\drew deraita\documents\github\caesarcipher\caesarcipher\main.cpp(64): error C2664: 'void Caesar_En(char [],char [],int)': cannot convert argument 1 from 'std::string' to 'char []'
+  c:\users\drew deraita\documents\github\caesarcipher\caesarcipher\main.cpp(64): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+c:\users\drew deraita\documents\github\caesarcipher\caesarcipher\main.cpp(81): error C2664: 'void Caesar_De(char [],char [],int)': cannot convert argument 2 from 'std::string' to 'char []'
+  c:\users\drew deraita\documents\github\caesarcipher\caesarcipher\main.cpp(81): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called

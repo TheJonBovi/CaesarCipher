@@ -316,3 +316,12 @@ ASALocalRun/
 
 # MSBuild Binary and Structured Log
 *.binlog
+*.db
+.vs/CaesarCipher/v15/.suo
+.vs/CaesarCipher/v15/.suo
+*.db
+*.db
+*.vcxproj
+*.pdb
+*.idb
+*.tlog
