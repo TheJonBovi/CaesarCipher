@@ -4,39 +4,13 @@
 #include "_stdafx.h"
 #include <fstream>
 #include "caesaralgo.h"
+#include <cstdlib>
 
 using namespace std;
 
 int main()
 {	//string filename;
 
-	string plaintext = "";
-
-	ifstream* fin = nullptr;
-	try
-	{	fin = new ifstream("plaintextfile.txt");
-		char achar;
-		while(fin->get(achar)) plaintext += achar;
-		fin->close();
-	}
-	catch(exception error)
-	{	if(fin != nullptr)	if(fin->good()) fin->close();
-		delete fin;
-		cout<< error.what();
-	}
-
-
-	char* cStrPlain = nullptr;
-	strcpy_s(cStrPlain, strlen(plaintext.c_str()), plaintext.c_str());
-	
-	//Routines to make sure plaintext is all lowercase
-
-	for (size_t currentChar{}; currentChar > sizeof(plaintext); currentChar++)
-	{
-		char c = cStrPlain[currentChar];
-		if (isalpha(c)) c = tolower(c);
-		plaintext[currentChar] = c;
-	}
 
 	// Code assistance from http://www.cplusplus.com/forum/beginner/21033/
 	int choice;
@@ -55,54 +29,90 @@ int main()
 		switch (choice)
 		{
 		case 1:
-		{
-			int key{};
+			{
+				string plaintext = "";
 
-			cout << "Enter Key: \n";
-			cin >> key;
+				ifstream* fin = nullptr;
+				try
+				{	fin = new ifstream("plaintextfile.txt");
+					char achar;
+					while(fin->get(achar)) plaintext += achar;
+					fin->close();
+				}
+				catch(exception error)
+				{	if(fin != nullptr)	if(fin->good()) fin->close();
+					delete fin;
+					cout<< error.what();
+				}
 
-			char* ciphertext = nullptr;
 
-			Caesar_En(cStrPlain, ciphertext, key);
-			fstream cipherStream;
-			cipherStream.open("ciphertextfile.txt");
-			cipherStream << ciphertext;
-			cipherStream.close();
+				char* cStrPlain = new char[strlen(plaintext.c_str())];
+				char* ciphertext = new char[strlen(plaintext.c_str()) + 1];
 
-			break;
+				strcpy_s(cStrPlain, strlen(plaintext.c_str()) + 1 , plaintext.c_str());
+				
+				//Routines to make sure plaintext is all lowercase
+
+				for (size_t currentChar{}; currentChar < sizeof(cStrPlain) + 1; currentChar++)
+				{
+					char c = cStrPlain[currentChar];
+					if (isalpha(c) && !isspace(c))
+					{
+						c = tolower(c);
+						cStrPlain[currentChar] = c;
+					}
+				}
+
+				int key{};
+
+				cout << " Enter Key: ";
+				cin >> key;
+
+
+				Caesar_En(cStrPlain, ciphertext, key);
+				fstream cipherStream;
+				cipherStream.open("ciphertextfile.txt", ios::out | ios::trunc);
+				cipherStream << ciphertext;
+				cipherStream.close();
+
+				//delete[] ciphertext;
+				//delete[] cStrPlain;
+
+				cout << "\n Encryption Sucessful! \n";
+
+				break;
 			}
 		case 2:
-		{
-			int key{};
+			{
+				int key{};
 
-			cout << "Enter Key: \n";
-			cin >> key;
+				cout << " Enter Key: \n";
+				cin >> key;
 
-			char* ciphertext = nullptr;
+				char* ciphertext = nullptr;
 
-			//Caesar_De(ciphertext, plaintext.c_str(), key);
-			fstream plainStream;
-			plainStream.open("ciphertextfile.txt");
-			plainStream << ciphertext;
-			plainStream.close();
+				//Caesar_De(ciphertext, plaintext.c_str(), key);
+				fstream plainStream;
+				plainStream.open("ciphertextfile.txt");
+				plainStream << ciphertext;
+				plainStream.close();
 
-			break;
-		}
+				break;
+			}
 		case 3:
-		{
-			cout << "End of Program.\n";
-			programRun = false;
-			break;
-		}
+			{
+				cout << "End of Program.\n";
+				programRun = false;
+				break;
+			}
 		default:
-		{
-			cout << "Not a Valid Choice. \n";
-			cout << "Choose again.\n";
-			cin >> choice;
-			break;
+			{
+				cout << "Not a Valid Choice. \n";
+				cout << "Choose again.\n";
+				cin >> choice;
+				break;
+			}
 		}
-		}
-
 	}
 	return 0;
 }
