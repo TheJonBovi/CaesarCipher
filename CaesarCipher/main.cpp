@@ -58,9 +58,9 @@ int main()
 					if (isalpha(c) && !isspace(c))
 					{
 						c = toupper(c);
+						cStrPlain[currentChar] = c;
 					}
 
-					cStrPlain[currentChar] = c;
 				}
 
 				int key{};
