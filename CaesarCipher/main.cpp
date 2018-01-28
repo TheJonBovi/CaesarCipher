@@ -51,25 +51,24 @@ int main()
 
 				strcpy_s(cStrPlain, strlen(plaintext.c_str()) + 1 , plaintext.c_str());
 				
-				//Routines to make sure plaintext is all lowercase
-
-				for (size_t currentChar{}; currentChar < sizeof(cStrPlain) + 1; currentChar++)
+				//Routines to make output all caps (ciphertext rules)
+				for (size_t currentChar{}; currentChar < strlen(cStrPlain) + 1; currentChar++)
 				{
 					char c = cStrPlain[currentChar];
 					if (isalpha(c) && !isspace(c))
 					{
-						c = tolower(c);
-						cStrPlain[currentChar] = c;
+						c = toupper(c);
 					}
+
+					cStrPlain[currentChar] = c;
 				}
 
 				int key{};
-
 				cout << " Enter Key: ";
 				cin >> key;
-
-
 				Caesar_En(cStrPlain, ciphertext, key);
+
+				//Output to file
 				fstream cipherStream;
 				cipherStream.open("ciphertextfile.txt", ios::out | ios::trunc);
 				cipherStream << ciphertext;
@@ -78,24 +77,69 @@ int main()
 				//delete[] ciphertext;
 				//delete[] cStrPlain;
 
-				cout << "\n Encryption Sucessful! \n";
+				system("CLS");
+
+				cout << "\n Encryption Sucessful! \n \n";
+
+				system("PAUSE");
+				system("CLS");
+
 
 				break;
 			}
 		case 2:
 			{
-				int key{};
+				string ciphertext = "";
 
+				ifstream* fin = nullptr;
+				try
+				{	fin = new ifstream("ciphertextfile.txt");
+					char achar;
+					while(fin->get(achar)) ciphertext += achar;
+					fin->close();
+				}
+				catch(exception error)
+				{	if(fin != nullptr)	if(fin->good()) fin->close();
+					delete fin;
+					cout<< error.what();
+				}
+
+
+				// Create cString copies to use with provided algorithm
+				char* cStrCipher = new char[strlen(ciphertext.c_str())];
+				char* plaintext = new char[strlen(ciphertext.c_str()) + 1];
+
+				strcpy_s(cStrCipher, strlen(ciphertext.c_str()) + 1 , ciphertext.c_str());
+				
+				//Routines to make output all lowercase (plaintext rules)
+				for (size_t currentChar{}; currentChar < strlen(cStrCipher) + 1; currentChar++)
+				{
+					char c = cStrCipher[currentChar];
+					if (isalpha(c) && !isspace(c))
+					{
+						c = tolower(c);
+						cStrCipher[currentChar] = c;
+					}
+				}
+
+				int key{};
 				cout << " Enter Key: \n";
 				cin >> key;
+				Caesar_De(cStrCipher, plaintext, key);
 
-				char* ciphertext = nullptr;
 
-				//Caesar_De(ciphertext, plaintext.c_str(), key);
+				//Output to file
 				fstream plainStream;
-				plainStream.open("ciphertextfile.txt");
-				plainStream << ciphertext;
+				plainStream.open("plaintextfile.txt", ios::out | ios::trunc);
+				plainStream << plaintext;
 				plainStream.close();
+
+				system("CLS");
+
+				cout << "\n Decryption Sucessful! \n \n";
+
+				system("PAUSE");
+				system("CLS");
 
 				break;
 			}

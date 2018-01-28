@@ -18,7 +18,7 @@ void Caesar_En(const char plaintext[], char ciphertext[], int key)
 	ciphertext[i] = 0; key = 0;//             Terminating Char, and cleanup.
 }
 
-void Caesar_De(char ciphertext[], char plaintext[], int key)
+void Caesar_De(const char ciphertext[], char plaintext[], int key)
 { 
 	Caesar_En(ciphertext, plaintext, -key);
 }
