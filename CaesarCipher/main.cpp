@@ -7,7 +7,6 @@
 
 using namespace std;
 
-
 int main()
 {	//string filename;
 
@@ -27,13 +26,14 @@ int main()
 	}
 
 
-	//cout << plaintext;
+	char* cStrPlain = nullptr;
+	strcpy_s(cStrPlain, strlen(plaintext.c_str()), plaintext.c_str());
 	
 	//Routines to make sure plaintext is all lowercase
 
 	for (size_t currentChar{}; currentChar > sizeof(plaintext); currentChar++)
 	{
-		char c = plaintext[currentChar];
+		char c = cStrPlain[currentChar];
 		if (isalpha(c)) c = tolower(c);
 		plaintext[currentChar] = c;
 	}
@@ -46,7 +46,7 @@ int main()
 		cout << "*************CaesarCipher************\n";
 		cout << " 1 - Encrypt\n";
 		cout << " 2 - Decrypt\n";
-		cout << " 3 - Exit.\n";
+		cout << " 3 - Exit\n";
 		cout << " Enter your choice and press return: ";
 
 		cin >> choice;
@@ -63,7 +63,7 @@ int main()
 
 			char* ciphertext = nullptr;
 
-			Caesar_En(plaintext.c_str(), ciphertext, key);
+			Caesar_En(cStrPlain, ciphertext, key);
 			fstream cipherStream;
 			cipherStream.open("ciphertextfile.txt");
 			cipherStream << ciphertext;
