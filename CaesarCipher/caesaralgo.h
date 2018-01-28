@@ -17,6 +17,6 @@ const int MAXKEY(N_CHAR + 1);    //(Maximum) length for a text key for vigenere 
 #define NUM_ARRAY_ENTRIES(a)  ( sizeof(a)/sizeof(*a) )
 								 //constexpr int NUM_ARRAY_ENTRIES(MenuChoice a)  { return sizeof(a)/sizeof(*a); } //Why won't this work?
 
-void Caesar_En(char plaintext[], char ciphertext[], int key);
+void Caesar_En(const char plaintext[], char ciphertext[], int key);
 
-void Caesar_De(char ciphertext[], char plaintext[], int key);
+void Caesar_De(const char ciphertext[], char plaintext[], int key);

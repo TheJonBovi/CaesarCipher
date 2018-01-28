@@ -10,7 +10,8 @@ using namespace std;
 
 int main()
 {	//string filename;
-	string plaintext = nullptr;
+
+	string plaintext = "";
 
 	ifstream* fin = nullptr;
 	try
@@ -24,6 +25,7 @@ int main()
 		delete fin;
 		cout<< error.what();
 	}
+
 
 	//cout << plaintext;
 	
@@ -41,7 +43,7 @@ int main()
 	auto programRun = true;
 	while (programRun) 
 	{
-		cout << "**********CaesarCipher*********\n";
+		cout << "*************CaesarCipher************\n";
 		cout << " 1 - Encrypt\n";
 		cout << " 2 - Decrypt\n";
 		cout << " 3 - Exit.\n";
@@ -61,7 +63,7 @@ int main()
 
 			char* ciphertext = nullptr;
 
-			Caesar_En(plaintext, ciphertext, key);
+			Caesar_En(plaintext.c_str(), ciphertext, key);
 			fstream cipherStream;
 			cipherStream.open("ciphertextfile.txt");
 			cipherStream << ciphertext;
@@ -78,7 +80,7 @@ int main()
 
 			char* ciphertext = nullptr;
 
-			Caesar_De(ciphertext, plaintext, key);
+			//Caesar_De(ciphertext, plaintext.c_str(), key);
 			fstream plainStream;
 			plainStream.open("ciphertextfile.txt");
 			plainStream << ciphertext;
