@@ -1,7 +1,2 @@
-﻿  stdafx.cpp
-  main.cpp
-  Clear_Screen.cpp
-  caesaralgo.cpp
-  Generating Code...
-  CaesarCipher.vcxproj -> C:\Users\derai\Documents\GitHub\CaesarCipher\Debug\CaesarCipher.exe
-  CaesarCipher.vcxproj -> C:\Users\derai\Documents\GitHub\CaesarCipher\Debug\CaesarCipher.pdb (Partial PDB)
+﻿  main.cpp
+  CaesarCipher.vcxproj -> C:\Users\Drew Deraita\Documents\GitHub\CaesarCipher\Debug\CaesarCipher.exe
