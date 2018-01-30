@@ -1,2 +1,3 @@
-Test File for encRYPTION
-Some other shit here
+test file:
+line two
+line #3

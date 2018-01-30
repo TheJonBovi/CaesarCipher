@@ -299,8 +299,15 @@ __pycache__/
 # Tabs Studio
 *.tss
 
+<<<<<<< HEAD
+# Compiled Dynamic libraries
+*.suo
+*.dylib
+*.dll
+=======
 # Telerik's JustMock configuration file
 *.jmconfig
+>>>>>>> 73c6bdbce0d458cb279c2919ee5c056646e5b0e6
 
 # BizTalk build output
 *.btp.cs
