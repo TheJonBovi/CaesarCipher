@@ -1,10 +1,12 @@
 #pragma once
+
 #define LETTERS_ONLY
+
 #ifdef LETTERS_ONLY
 
-#define ALPHABET                          "abcdefghijklmnopqrstuvwxyz"
-const int MINVAL(97);   //40 (OCT) 20(HEX) Minimum ASCII Value
-const int MAXVAL(122);  //176(OCT) 7E(HEX) Maximum ASCII Value
+#define ALPHABET                          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const int MINVAL(65);   //40 (OCT) 20(HEX) Minimum ASCII Value
+const int MAXVAL(90);  //176(OCT) 7E(HEX) Maximum ASCII Value
 #else
 #define ALPHABET                          " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
 const int MINVAL(32);   //40 (OCT) 20(HEX) Minimum ASCII Value
