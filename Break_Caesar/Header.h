@@ -4,6 +4,10 @@
 
 #ifdef LETTERS_ONLY
 
+//#define LOWERCASE                          "abcdefghijklmnopqrstuvwxyz"
+//const int MINVAL(97);   //40 (OCT) 20(HEX) Minimum ASCII Value
+//const int MAXVAL(122);  //176(OCT) 7E(HEX) Maximum ASCII Value
+
 #define ALPHABET                          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const int MINVAL(65);   //40 (OCT) 20(HEX) Minimum ASCII Value
 const int MAXVAL(90);  //176(OCT) 7E(HEX) Maximum ASCII Value
